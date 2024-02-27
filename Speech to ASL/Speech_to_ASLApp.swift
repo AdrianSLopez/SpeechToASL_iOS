@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Speech_to_ASLApp: App {
+    var recorder = RecordAudioViewController()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(recorder: recorder)
         }
     }
 }

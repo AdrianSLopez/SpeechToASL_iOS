@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634E72372B80746C00C5C48A /* test_audio in Resources */ = {isa = PBXBuildFile; fileRef = 634E72362B80746C00C5C48A /* test_audio */; };
+		634E723A2B8079E900C5C48A /* recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E72392B8079E900C5C48A /* recorder.swift */; };
+		634E723C2B80864C00C5C48A /* AudioPermissionRequireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E723B2B80864C00C5C48A /* AudioPermissionRequireView.swift */; };
 		635144282B69931B009933EE /* Speech_to_ASLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635144272B69931B009933EE /* Speech_to_ASLApp.swift */; };
 		6351442A2B69931B009933EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635144292B69931B009933EE /* ContentView.swift */; };
 		6351442C2B699322009933EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6351442B2B699322009933EE /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		634E72362B80746C00C5C48A /* test_audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = test_audio; path = ../../test_audio; sourceTree = "<group>"; };
+		634E72392B8079E900C5C48A /* recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recorder.swift; sourceTree = "<group>"; };
+		634E723B2B80864C00C5C48A /* AudioPermissionRequireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPermissionRequireView.swift; sourceTree = "<group>"; };
 		635144242B69931B009933EE /* Speech to ASL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech to ASL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		635144272B69931B009933EE /* Speech_to_ASLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_to_ASLApp.swift; sourceTree = "<group>"; };
 		635144292B69931B009933EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +50,7 @@
 		6351443E2B699323009933EE /* Speech to ASLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speech to ASLUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		635144422B699323009933EE /* Speech_to_ASLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_to_ASLUITests.swift; sourceTree = "<group>"; };
 		635144442B699323009933EE /* Speech_to_ASLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_to_ASLUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63F708542B840BFE00617AA4 /* Speech-to-ASL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Speech-to-ASL-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +101,15 @@
 		635144262B69931B009933EE /* Speech to ASL */ = {
 			isa = PBXGroup;
 			children = (
+				63F708542B840BFE00617AA4 /* Speech-to-ASL-Info.plist */,
+				63DE8E9C2B816B2C008F32BD /* trecorded_audio */,
+				634E72362B80746C00C5C48A /* test_audio */,
 				635144272B69931B009933EE /* Speech_to_ASLApp.swift */,
 				635144292B69931B009933EE /* ContentView.swift */,
 				6351442B2B699322009933EE /* Assets.xcassets */,
 				6351442D2B699322009933EE /* Preview Content */,
+				634E72392B8079E900C5C48A /* recorder.swift */,
+				634E723B2B80864C00C5C48A /* AudioPermissionRequireView.swift */,
 			);
 			path = "Speech to ASL";
 			sourceTree = "<group>";
@@ -125,6 +137,13 @@
 				635144442B699323009933EE /* Speech_to_ASLUITestsLaunchTests.swift */,
 			);
 			path = "Speech to ASLUITests";
+			sourceTree = "<group>";
+		};
+		63DE8E9C2B816B2C008F32BD /* trecorded_audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = trecorded_audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6351442F2B699322009933EE /* Preview Assets.xcassets in Resources */,
+				634E72372B80746C00C5C48A /* test_audio in Resources */,
 				6351442C2B699322009933EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634E723C2B80864C00C5C48A /* AudioPermissionRequireView.swift in Sources */,
 				6351442A2B69931B009933EE /* ContentView.swift in Sources */,
 				635144282B69931B009933EE /* Speech_to_ASLApp.swift in Sources */,
+				634E723A2B8079E900C5C48A /* recorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +444,8 @@
 				DEVELOPMENT_TEAM = A48GNM3DZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Speech-to-ASL-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "You need to allow microphone in order to record";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -451,7 +474,8 @@
 				DEVELOPMENT_TEAM = A48GNM3DZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Speech-to-ASL-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "You need to allow microphone in order to record";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

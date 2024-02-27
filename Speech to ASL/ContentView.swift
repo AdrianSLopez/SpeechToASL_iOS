@@ -6,19 +6,24 @@
 //
 
 import SwiftUI
+import AVFoundation
+import SwiftUI
 
 struct ContentView: View {
     @State private var counter = 0
     @State private var pressing = false
     @State private var audioRecorded = false
+    @State private var recording = false
     @State private var aslReady = false
     @State private var home = true
-    
+    @State var recorder: RecordAudioViewController
+
     var body: some View {
         
         VStack {
+            
             if home {
-                RecordingButtonView(audioReady: $audioRecorded, aslReady: $aslReady)
+                RecordingButtonView(audioReady: $audioRecorded, aslReady: $aslReady, recording: $recording, recorder: $recorder)
                 
                 if audioRecorded && aslReady {
                     ASLButtonView(home: $home)
@@ -37,12 +42,23 @@ struct ContentView: View {
 struct RecordingButtonView: View {
     @Binding var audioReady: Bool
     @Binding var aslReady: Bool
+    @Binding var recording: Bool
+    @Binding var recorder:RecordAudioViewController
     
-    var body: some View{
+    var body: some View {
+        
         Button(action: {
-            // Your custom logic when the button is tapped
             
-            print("Recording....")
+            if recording {
+                recorder.stopRecording()
+                print("STOP RECORDING")
+                recording = false
+            } else {
+                recorder.startRecording()
+                print("RECORDING")
+                recording = true
+            }
+            
             
             // when model generates image and ready, toggle
             if !audioReady && !aslReady{
@@ -50,7 +66,7 @@ struct RecordingButtonView: View {
                 aslReady.toggle()
             }
         }) {
-            Text("Record")
+            Text(recording ? "Stop Recording" : "Start Recording")
                 .font(.system(size: 16))
                 .padding()
                 .background(Color.red)
@@ -137,6 +153,6 @@ struct HorizontalNotifyView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(recorder: RecordAudioViewController())
     }
 }
